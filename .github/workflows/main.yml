@@ -1,0 +1,21 @@
+# Reload from an action
+
+name: Test
+
+on:
+  push
+
+jobs:
+  perl:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install
+      run: |
+        sudo cpan -T -i Data::Table::Text GitHub::Crud Digest::SHA1 
+    - name: Test
+      run: |
+        date > zzz.txt
+        GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} perl -M"GitHub::Crud" -e"GitHub::Crud::writeFileFromFileFromCurrentRun q(zzz.txt);"
