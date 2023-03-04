@@ -23,4 +23,4 @@ jobs:
         date >> zzz.txt
         date >> zzz.txt
         echo "BBBB" >> zzz.txt
-        GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} perl -M"GitHub::Crud" -e"writeFileFromFileFromCurrentRun q(zzz.txt);"
+        GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} perl -M"GitHub::Crud" -e""GitHub::Crud::writeFileFromFileFromCurrentRun q(zzz.txt);"
