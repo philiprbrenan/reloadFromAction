@@ -15,7 +15,9 @@ jobs:
 
     - name: Install
       run: |
-        sudo cpan -T -i Data::Table::Text GitHub::Crud Digest::SHA1 
+        sudo cpan -T -i GitHub::Crud  
+        # sudo cpan -T -i Data::Table::Text GitHub::Crud Digest::SHA1 
+
     - name: Test
       run: |
         date >  zzz.txt
